@@ -41,13 +41,13 @@ header .header-actions{
     padding: 10px 15px;
     border: none;
     border-radius: 0 20px 20px 0;
+    background-color: white;
     cursor: pointer;
 }
 header .home{
     display: flex;
     align-items: center;
     gap: 10px;
-    /* width: 131px; */
     cursor: pointer;
     margin-left: 10px;
 }
