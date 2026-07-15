@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cine Time</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/4cf2ee64c4.js" crossorigin="anonymous"></script>
     <header>
         <div class="home">
-            <img id="logo" src="logo.png" alt="">
+            <img id="logo" src="Assets/logo.png" alt="">
             <span>CINE TIME</span>
         </div>
+        <div class="header-actions">
+            <div class="search">
+                <input id="search-bar" type="text" placeholder="Search movies and TV shows...">
+                <button class="search-btn" aria-label="Search">
+                    <i class="fa-brands fa-sistrix fa-2x"></i>
+                </button>
+            </div>
+            <button id="theme-toggle">🌙</button>
+        </div>
     </header>
-    <script src="script.js"></script>
 </body>
+
 </html>
