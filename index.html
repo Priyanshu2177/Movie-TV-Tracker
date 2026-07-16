@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/4cf2ee64c4.js" crossorigin="anonymous"></script>
     <header>
         <div class="home">
@@ -17,15 +16,71 @@
             <span>CINE TIME</span>
         </div>
         <div class="header-actions">
-            <div class="search">
-                <input id="search-bar" type="text" placeholder="Search movies and TV shows...">
-                <button class="search-btn" aria-label="Search">
-                    <i class="fa-brands fa-sistrix fa-2x"></i>
-                </button>
+            <div class="search-container">
+                <div class="search">
+                    <input id="search-bar" type="text" placeholder="Search movies and TV shows...." autocomplete="off">
+                    <button class="search-btn" aria-label="Search">
+                        <i class="fa-brands fa-sistrix fa-2x"></i>
+                    </button>
+                </div>
+                <div class="search-results">
+                    <div class="search-item">
+                        <img src="Assets/placeholder-image.jfif" alt="Interstellar poster" class="poster">
+                        <div class="search-info">
+                            <h4>Interstellar</h4>
+                            <p>
+                                <i class="fa-solid fa-clapperboard"></i>
+                                <span>2014</span>
+                                <span>|</span>
+                                <i class="fa-brands fa-imdb"></i>
+                                <span>8.7</span>
+                            </p>
+                        </div>
+                        <button class="watchlist-btn" aria-label="Add to Watchlist">
+                            <i class="fa-regular fa-square-plus"></i>
+                        </button>
+                    </div>
+
+                    <div class="search-item">
+                        <img src="Assets/placeholder-image.jfif" alt="Invincible poster" class="poster">
+                        <div class="search-info">
+                            <h4>Invincible</h4>
+                            <p>
+                                <i class="fa-solid fa-tv"></i>
+                                <span>2021</span>
+                                <span>|</span>
+                                <i class="fa-brands fa-imdb"></i>
+                                <span>8.7</span>
+                            </p>
+                        </div>
+                        <button class="watchlist-btn added" aria-label="Remove from Watchlist">
+                            <i class="fa-solid fa-square-check"></i>
+                        </button>
+                    </div>
+
+                    <div class="search-item">
+                        <img src="Assets/placeholder-image.jfif" alt="Inception poster" class="poster">
+                        <div class="search-info">
+                            <h4>Inception</h4>
+                            <p>
+                                <i class="fa-solid fa-clapperboard"></i>
+                                <span>2010</span>
+                                <span>|</span>
+                                <i class="fa-brands fa-imdb"></i>
+                                <span>8.8</span>
+                            </p>
+                        </div>
+                        <button class="watchlist-btn added" aria-label="Remove from watchlist">
+                            <i class="fa-solid fa-square-check"></i>
+                        </button>
+                    </div>
+
+                </div>
             </div>
             <button id="theme-toggle">🌙</button>
         </div>
     </header>
+    <script src="script.js"></script>
 </body>
 
 </html>
