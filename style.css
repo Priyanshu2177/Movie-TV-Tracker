@@ -129,8 +129,11 @@ header .home span{
 }
 
 main{
-    padding: 24px;
-    margin-top: 20px;
+    padding: 7px;
+}
+#progress-page h1{
+    margin-block-start: 0;
+    margin-block-end: 9px;
 }
 .page{
     display: none;
@@ -138,6 +141,79 @@ main{
 .page.active{
     display: block;
 }
+
+.progress-container .card{
+    display: flex;
+    align-items: center;
+    height: 92px;
+    gap: 10px;
+}
+.progress-container .prog-poster{
+    height: 86px;
+}
+.ep-info{
+    display: flex;
+    flex-direction: column;
+    height: 86px;
+    justify-content: space-between;
+}
+.ep-info .title{
+    font-size: 19px;
+    font-weight: 600;
+}
+.ep-details{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.episode{
+    display: flex;
+    gap: 7px;
+}
+.ep-number{
+    font-size: 13px;
+    font-weight: 600;
+    background: #93985c;
+    padding: 0 2px;
+    border-radius: 3px;
+}
+.ep-name{
+    font-size: 14px;
+    color: #2d2d2da4;
+}
+
+.date{
+    font-size: 12px;
+    color: rgba(103, 154, 2, 0.61);
+    padding-left: 3px;
+}
+.progress{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.progress span{
+    font-size: 13px;
+}
+.progress-bar{
+    width: 175px;
+    height: 7px;
+    border-radius: 10px;
+    background-color: #ddd;
+    overflow: hidden;
+}
+
+.progress-value{
+    height: 100%;
+    width: 0;
+    background-color: rgb(135, 205, 50);
+}
+
+.card .watch{
+    font-size: 29px;
+    cursor: pointer;
+}
+
 .bottom{
     position: fixed;
     display: flex;
@@ -197,3 +273,4 @@ main{
     cursor: pointer;
     transition: .2s ease;
 }
+

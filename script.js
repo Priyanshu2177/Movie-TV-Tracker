@@ -9,3 +9,13 @@ themeToggle.addEventListener("click", () => {
         themeToggle.textContent = "🌙";
     }
 });
+
+let watched = 11;
+let total = 32;
+
+let percentage = (watched / total) * 100;
+
+document.querySelector(".progress-value").style.width = percentage + "%";
+
+document.getElementById("status").textContent =
+    `(${watched}/${total})`;
