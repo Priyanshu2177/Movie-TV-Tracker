@@ -39,3 +39,36 @@ document.querySelector(".progress-value-3").style.width = percentage3 + "%";
 
 document.getElementById("status3").textContent =
     `(${watched3}/${total3})`;
+
+const tabs = document.querySelectorAll(".navigation");
+const pages = document.querySelectorAll(".page");
+
+function showPage(pageId, activeTab) {
+
+    pages.forEach(page => {
+        page.classList.remove("active");
+    });
+
+    tabs.forEach(tab => {
+        tab.classList.remove("active");
+    });
+
+    document.getElementById(pageId).classList.add("active");
+    activeTab.classList.add("active");
+}
+
+
+document.getElementById("progress-tab")
+    .addEventListener("click", function () {
+        showPage("progress-page", this);
+    });
+
+document.getElementById("watchlist-tab")
+    .addEventListener("click", function () {
+        showPage("watchlist-page", this);
+    });
+
+document.getElementById("history-tab")
+    .addEventListener("click", function () {
+        showPage("watched-page", this);
+    });
