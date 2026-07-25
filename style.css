@@ -142,23 +142,32 @@ main{
     display: block;
 }
 
-.progress-container .card{
+.progress-container .progress-card{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     height: 92px;
-    gap: 10px;
+    gap: 16px;
+    background: white;
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 .progress-container .prog-poster{
-    height: 86px;
+    height: 90px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 .ep-info{
     display: flex;
+    flex: 1;
     flex-direction: column;
     height: 86px;
     justify-content: space-between;
 }
 .ep-info .title{
     font-size: 19px;
+    line-height: 1.2;
     font-weight: 600;
 }
 .ep-details{
@@ -173,13 +182,17 @@ main{
 .ep-number{
     font-size: 13px;
     font-weight: 600;
-    background: #93985c;
+    background: #FFD54f;
+    color: #000;
     padding: 0 2px;
     border-radius: 3px;
 }
 .ep-name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 14px;
-    color: #2d2d2da4;
+    color: #666;
 }
 
 .date{
@@ -187,16 +200,21 @@ main{
     color: rgba(103, 154, 2, 0.61);
     padding-left: 3px;
 }
+.date.upcoming{
+    font-size: 12px;
+    color: rgba(154, 70, 2, 0.61);
+    padding-left: 3px;
+}
 .progress{
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: 8px;
 }
 .progress span{
     font-size: 13px;
 }
 .progress-bar{
-    width: 175px;
+    flex: 1;
     height: 7px;
     border-radius: 10px;
     background-color: #ddd;
@@ -209,8 +227,10 @@ main{
     background-color: rgb(135, 205, 50);
 }
 
-.card .watch{
-    font-size: 29px;
+.progress-card .watch{
+    flex-shrink: 0;
+    margin-top: 18px;
+    font-size: 24px;
     cursor: pointer;
 }
 
