@@ -1,3 +1,4 @@
+// Theme Toggle
 const themeToggle = document.querySelector("#theme-toggle");
 
 themeToggle.addEventListener("click", () => {
@@ -10,6 +11,7 @@ themeToggle.addEventListener("click", () => {
     }
 });
 
+// Progress Bar
 let watched = 11;
 let total = 32;
 
@@ -40,7 +42,7 @@ document.querySelector(".progress-value-3").style.width = percentage3 + "%";
 document.getElementById("status3").textContent =
     `(${watched3}/${total3})`;
 
-
+// Navigation tabs switching
 const tabs = document.querySelectorAll(".navigation");
 const pages = document.querySelectorAll(".page");
 
@@ -74,7 +76,7 @@ document.getElementById("history-tab")
         showPage("watched-page", this);
     });
 
-
+// Media Tabs switching
 function setupMediaTabs(tabContainerId, movieListId, showListId) {
 
     const tabContainer = document.getElementById(tabContainerId);
@@ -116,3 +118,29 @@ setupMediaTabs(
     "history-movies",
     "history-shows"
 );
+
+// Click card and check button
+const cards = document.querySelectorAll(".media-card");
+
+cards.forEach(card => {
+    card.addEventListener("click", function (e) {
+
+        // Was the check icon clicked?
+        if (e.target.closest(".watch, .watch-action")) {
+            markAsWatched(card);
+            return;
+        }
+
+        // Otherwise, the card itself was clicked
+        openDetails(card);
+
+    });
+});
+
+function openDetails(card) {
+    console.log("Open details page");
+}
+
+function markAsWatched(card) {
+    console.log("Marked as watched");
+}

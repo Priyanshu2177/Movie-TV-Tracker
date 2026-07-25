@@ -325,6 +325,20 @@ main{
     margin-top: 2px;
 }
 
+.watch,
+.watch-action{
+    transition: transform .15s ease;
+}
+
+.watch:hover,
+.watch-action:hover{
+    transform: scale(1.18);
+}
+
+.watch:active,
+.watch-action:active{
+    transform: scale(.9);
+}
 
 .history-date{
     margin-top: 6px;
