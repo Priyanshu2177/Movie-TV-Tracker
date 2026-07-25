@@ -75,29 +75,44 @@ document.getElementById("history-tab")
     });
 
 
-const mediaTabs = document.querySelectorAll(".media-tabs button");
-const mediaLists = document.querySelectorAll(".media-list");
+function setupMediaTabs(tabContainerId, movieListId, showListId) {
 
-function showMedia(listId, activeButton) {
+    const tabContainer = document.getElementById(tabContainerId);
+    const buttons = tabContainer.querySelectorAll("button");
 
-    mediaLists.forEach(list => {
-        list.classList.remove("active");
+    const movieList = document.getElementById(movieListId);
+    const showList = document.getElementById(showListId);
+
+    buttons[0].addEventListener("click", function () {
+
+        buttons[0].classList.add("active");
+        buttons[1].classList.remove("active");
+
+        movieList.classList.add("active");
+        showList.classList.remove("active");
+
     });
 
-    mediaTabs.forEach(tab => {
-        tab.classList.remove("active");
+    buttons[1].addEventListener("click", function () {
+
+        buttons[1].classList.add("active");
+        buttons[0].classList.remove("active");
+
+        showList.classList.add("active");
+        movieList.classList.remove("active");
+
     });
 
-    document.getElementById(listId).classList.add("active");
-    activeButton.classList.add("active");
 }
 
-document.getElementById("movie-btn")
-    .addEventListener("click", function () {
-        showMedia("movie-list", this);
-    });
+setupMediaTabs(
+    "watchlist-tabs",
+    "watchlist-movies",
+    "watchlist-shows"
+);
 
-document.getElementById("show-btn")
-    .addEventListener("click", function () {
-        showMedia("show-list", this);
-    });
+setupMediaTabs(
+    "history-tabs",
+    "history-movies",
+    "history-shows"
+);

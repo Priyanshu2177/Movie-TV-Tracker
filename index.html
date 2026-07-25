@@ -165,23 +165,23 @@
         </section>
 
         <section id="watchlist-page" class="page ">
-            <div class="media-tabs">
+            <div id="watchlist-tabs" class="media-tabs">
                 <button id="movie-btn" class="active">Movies</button>
-                <button id="show-btn">TV Shows</button>
+                <button id="show-btn">Shows</button>
             </div>
-            <div class="watchlist-container">
-                <div id="movie-list" class="media-list active">
+            <div class="media-container">
+                <div id="watchlist-movies" class="media-list active">
                     <div class="media-card watchlist-card movie-card">
-                        <img src="Assets/progress-image.jpg" alt="Interstellar" class="watch-poster">
+                        <img src="Assets/progress-image.jpg" alt="Inception" class="watch-poster">
 
                         <div class="watch-info">
-                            <h3>Interstellar</h3>
+                            <h3>Inception</h3>
                             <div class="watch-meta">
                                 <i class="fa-solid fa-clapperboard"></i>
-                                <span>2014</span>
+                                <span>2010</span>
                                 <span>|</span>
                                 <i class="fa-brands fa-imdb"></i>
-                                <span>8.7</span>
+                                <span>8.8</span>
                             </div>
                         </div>
 
@@ -207,18 +207,18 @@
                     </div>
                 </div>
 
-                <div id="show-list" class="media-list">
+                <div id="watchlist-shows" class="media-list">
                     <div class="media-card watchlist-card show-card">
-                        <img src="Assets/progress-image.jpg" alt="Invincible" class="watch-poster">
+                        <img src="Assets/progress-image.jpg" alt="Breaking Bad" class="watch-poster">
 
                         <div class="watch-info">
-                            <h3>Invincible</h3>
+                            <h3>Breaking Bad</h3>
                             <div class="watch-meta">
                                 <i class="fa-solid fa-tv"></i>
-                                <span>2021</span>
+                                <span>2008</span>
                                 <span>|</span>
                                 <i class="fa-brands fa-imdb"></i>
-                                <span>8.7</span>
+                                <span>9.5</span>
                             </div>
                         </div>
 
@@ -230,12 +230,109 @@
         </section>
 
         <section id="watched-page" class="page active">
-            <div class="media-tabs">
+            <div id="history-tabs" class="media-tabs">
                 <button class="active">Movies</button>
-                <button>TV Shows</button>
+                <button>Shows</button>
             </div>
-            <div class="watched-container">
+            <div class="media-container">
+                <div id="history-movies" class="media-list active">
 
+                    <div class="media-card history-card">
+                        <img src="Assets/progress-image.jpg" alt="Shutter Island" class="watch-poster">
+
+                        <div class="watch-info">
+                            <h3>Shutter Island</h3>
+
+                            <div class="watch-meta">
+                                <i class="fa-solid fa-clapperboard"></i>
+                                <span>2010</span>
+                                <span>|</span>
+                                <i class="fa-brands fa-imdb"></i>
+                                <span>8.2</span>
+                            </div>
+
+                            <div class="history-date">
+                                Watched: 18 Jul 2026
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card history-card">
+                        <img src="Assets/progress-image.jpg" alt="Fight Club" class="watch-poster">
+
+                        <div class="watch-info">
+                            <h3>Fight Club</h3>
+
+                            <div class="watch-meta">
+                                <i class="fa-solid fa-clapperboard"></i>
+                                <span>1999</span>
+                                <span>|</span>
+                                <i class="fa-brands fa-imdb"></i>
+                                <span>8.8</span>
+                            </div>
+
+                            <div class="history-date">
+                                Watched: 14 Jul 2026
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="history-shows" class="media-list">
+                    <div class="media-card history-card">
+                        <img src="Assets/progress-image.jpg" alt="X-Men '97" class="watch-poster">
+
+                        <div class="watch-info">
+                            <h3>X-Men '97</h3>
+
+                            <div class="episode">
+                                <span class="ep-number">S.02 E.06</span>
+                                <span class="ep-name">The Age of Revelation</span>
+                            </div>
+
+                            <div class="history-date">
+                                Watched: 25 Jul 2026
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card history-card">
+                        <img src="Assets/progress-image.jpg" alt="Invincible" class="watch-poster">
+
+                        <div class="watch-info">
+                            <h3>Invincible</h3>
+
+                            <div class="episode">
+                                <span class="ep-number">S.02 E.03</span>
+                                <span class="ep-name">This Missive, This Machination!</span>
+                            </div>
+
+                            <div class="history-date">
+                                Watched: 22 Jul 2026
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card history-card">
+                        <img src="Assets/progress-image.jpg" alt="The Boys" class="watch-poster">
+
+                        <div class="watch-info">
+                            <h3>The Boys</h3>
+
+                            <div class="episode">
+                                <span class="ep-number">S.04 E.02</span>
+                                <span class="ep-name">Life Among the Septics</span>
+                            </div>
+
+                            <div class="history-date">
+                                Watched: 20 Jul 2026
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
         </section>
     </main>
