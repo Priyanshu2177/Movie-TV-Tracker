@@ -40,6 +40,7 @@ document.querySelector(".progress-value-3").style.width = percentage3 + "%";
 document.getElementById("status3").textContent =
     `(${watched3}/${total3})`;
 
+
 const tabs = document.querySelectorAll(".navigation");
 const pages = document.querySelectorAll(".page");
 
@@ -71,4 +72,32 @@ document.getElementById("watchlist-tab")
 document.getElementById("history-tab")
     .addEventListener("click", function () {
         showPage("watched-page", this);
+    });
+
+
+const mediaTabs = document.querySelectorAll(".media-tabs button");
+const mediaLists = document.querySelectorAll(".media-list");
+
+function showMedia(listId, activeButton) {
+
+    mediaLists.forEach(list => {
+        list.classList.remove("active");
+    });
+
+    mediaTabs.forEach(tab => {
+        tab.classList.remove("active");
+    });
+
+    document.getElementById(listId).classList.add("active");
+    activeButton.classList.add("active");
+}
+
+document.getElementById("movie-btn")
+    .addEventListener("click", function () {
+        showMedia("movie-list", this);
+    });
+
+document.getElementById("show-btn")
+    .addEventListener("click", function () {
+        showMedia("show-list", this);
     });

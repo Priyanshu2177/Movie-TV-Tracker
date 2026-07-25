@@ -82,10 +82,9 @@
     </header>
 
     <main id="content">
-        <section id="progress-page" class="page active">
-            <h1>Continue Watching</h1>
+        <section id="progress-page" class="page ">
             <div class="progress-container">
-                <div class="progress-card">
+                <div class=" media-card progress-card">
                     <img src="Assets/progress-image.jpg" alt="Invincible" class="prog-poster">
                     <div class="ep-info">
                         <div class="title">
@@ -111,7 +110,7 @@
                     <i class="fa-regular fa-circle-check watch"></i>
                 </div>
 
-                <div class="progress-card">
+                <div class="media-card progress-card">
                     <img src="Assets/progress-image.jpg" alt="The Boys" class="prog-poster">
                     <div class="ep-info">
                         <div class="title">
@@ -137,7 +136,7 @@
                     <i class="fa-regular fa-circle-check watch"></i>
                 </div>
 
-                <div class="progress-card">
+                <div class="media-card progress-card">
                     <img src="Assets/progress-image.jpg" alt="X-Men '97" class="prog-poster">
                     <div class="ep-info">
                         <div class="title">
@@ -165,53 +164,73 @@
             </div>
         </section>
 
-        <section id="watchlist-page" class="page">
-            <h1>Watchlist</h1>
-            <div class="watchlist-tab">
-                <button class="active">Movies</button>
-                <button>TV Shows</button>
+        <section id="watchlist-page" class="page ">
+            <div class="media-tabs">
+                <button id="movie-btn" class="active">Movies</button>
+                <button id="show-btn">TV Shows</button>
             </div>
             <div class="watchlist-container">
-                <div class="watchlist-card movie-card">
-                    <img src="Assets/interstellar.jpg" alt="Interstellar" class="watch-poster">
+                <div id="movie-list" class="media-list active">
+                    <div class="media-card watchlist-card movie-card">
+                        <img src="Assets/progress-image.jpg" alt="Interstellar" class="watch-poster">
 
-                    <div class="watch-info">
-                        <h3>Interstellar</h3>
-                        <div class="watch-meta">
-                            <i class="fa-solid fa-clapperboard"></i>
-                            <span>2014</span>
-                            <span>|</span>
-                            <i class="fa-brands fa-imdb"></i>
-                            <span>8.7</span>
+                        <div class="watch-info">
+                            <h3>Interstellar</h3>
+                            <div class="watch-meta">
+                                <i class="fa-solid fa-clapperboard"></i>
+                                <span>2014</span>
+                                <span>|</span>
+                                <i class="fa-brands fa-imdb"></i>
+                                <span>8.7</span>
+                            </div>
                         </div>
+
+                        <i class="fa-regular fa-circle-check watch-action"></i>
+
                     </div>
 
-                    <i class="fa-regular fa-circle-check watch-action"></i>
+                    <div class="media-card watchlist-card movie-card">
+                        <img src="Assets/progress-image.jpg" alt="The Dark Knight" class="watch-poster">
+
+                        <div class="watch-info">
+                            <h3>The Dark Knight</h3>
+                            <div class="watch-meta">
+                                <i class="fa-solid fa-clapperboard"></i>
+                                <span>2008</span>
+                                <span>|</span>
+                                <i class="fa-brands fa-imdb"></i>
+                                <span>9.1</span>
+                            </div>
+                        </div>
+
+                        <i class="fa-regular fa-circle-check watch-action"></i>
+                    </div>
                 </div>
 
-                <div class="watchlist-card show-card">
-                    <img src="Assets/invincible.jpg" alt="Invincible" class="watch-poster">
+                <div id="show-list" class="media-list">
+                    <div class="media-card watchlist-card show-card">
+                        <img src="Assets/progress-image.jpg" alt="Invincible" class="watch-poster">
 
-                    <div class="watch-info">
-                        <h3>Invincible</h3>
-                        <div class="watch-meta">
-                            <i class="fa-solid fa-tv"></i>
-                            <span>2021</span>
-                            <span>|</span>
-                            <i class="fa-brands fa-imdb"></i>
-                            <span>8.7</span>
+                        <div class="watch-info">
+                            <h3>Invincible</h3>
+                            <div class="watch-meta">
+                                <i class="fa-solid fa-tv"></i>
+                                <span>2021</span>
+                                <span>|</span>
+                                <i class="fa-brands fa-imdb"></i>
+                                <span>8.7</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <i class="fa-solid fa-hourglass-start"></i>
+                        <i class="fa-regular fa-circle-check watch-action"></i>
+                    </div>
                 </div>
 
             </div>
         </section>
 
-        <section id="watched-page" class="page">
-            <h1>Watched</h1>
-            <div class="watched-tab">
+        <section id="watched-page" class="page active">
+            <div class="media-tabs">
                 <button class="active">Movies</button>
                 <button>TV Shows</button>
             </div>
@@ -222,19 +241,19 @@
     </main>
 
     <div class="bottom">
-        <div id="progress-tab" class="navigation active">
+        <div id="progress-tab" class="navigation">
             <div class="nav-content">
                 <i class="fa-solid fa-arrow-trend-up icon"></i>
                 <span>Progress</span>
             </div>
         </div>
-        <div id="watchlist-tab" class="navigation">
+        <div id="watchlist-tab" class="navigation ">
             <div class="nav-content">
                 <i class="fa-regular fa-calendar-check icon"></i>
                 <span>Watchlist</span>
             </div>
         </div>
-        <div id="history-tab" class="navigation">
+        <div id="history-tab" class="navigation active">
             <div class="nav-content">
                 <i class="fa-solid fa-calendar-check icon"></i>
                 <span>History</span>
