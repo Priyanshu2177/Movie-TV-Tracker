@@ -363,7 +363,7 @@ main{
 }
 
 .details-container{
-    max-width: 1000px;
+    max-width: 800px;
     margin: auto;
 }
 
@@ -396,17 +396,16 @@ main{
 .details-rating{
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 18px;
-    font-weight: 600;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 500;
 }
 .details-rating .imdb{
     color: #f5c518;
 }
 
 .details-genres,
-.details-year,
-.details-runtime{
+.details-meta{
     color: #666;
     font-size: 16px;
 }
@@ -420,7 +419,8 @@ main{
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 18px;
+    padding: 8px 16px;
+    font-size: 15px;
     border: none;
     border-radius: 10px;
     background: #FFD54F;
@@ -469,6 +469,11 @@ main{
     display: flex;
     gap: 16px;
     overflow-x: auto;
+    overflow-y: hidden;
+    padding: 6px 0;
+}
+.similar-card{
+    flex-shrink: 0;
 }
 .similar-card img,
 .similar-list img{
@@ -479,7 +484,7 @@ main{
 }
 .similar-card img:hover,
 .similar-list img:hover{
-    transform: scale(1.05);
+    transform: translateY(-6px);
 }
 
 

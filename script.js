@@ -46,42 +46,39 @@ document.getElementById("status3").textContent =
 const tabs = document.querySelectorAll(".navigation");
 const pages = document.querySelectorAll(".page");
 
-function showPage(pageId, activeTab) {
+function showPage(pageId) {
 
     pages.forEach(page => {
         page.classList.remove("active");
     });
-
-    tabs.forEach(tab => {
-        tab.classList.remove("active");
-    });
-
     document.getElementById(pageId).classList.add("active");
-    activeTab.classList.add("active");
-
+    
     const header = document.querySelector("header");
-
-    if (pageId === "details-page"){
-        header.style.display  = "none";
+    if (pageId === "details-page") {
+        header.style.display = "none";
     } else {
         header.style.display = "flex";
+    }
+    
+    if (pageId !== "details-page") {
+        setActiveNav(pageId)
     }
 }
 
 
-document.getElementById("progress-tab")
+document.querySelector("#progress-tab .nav-content")
     .addEventListener("click", function () {
-        showPage("progress-page", this);
+        showPage("progress-page", document.getElementById("progress-tab"));
     });
 
-document.getElementById("watchlist-tab")
+document.querySelector("#watchlist-tab .nav-content")
     .addEventListener("click", function () {
-        showPage("watchlist-page", this);
+        showPage("watchlist-page", document.getElementById("watchlist-tab"));
     });
 
-document.getElementById("history-tab")
+document.querySelector("#history-tab .nav-content")
     .addEventListener("click", function () {
-        showPage("watched-page", this);
+        showPage("watched-page", document.getElementById("history-tab"));
     });
 
 // Media Tabs switching
@@ -144,10 +141,6 @@ cards.forEach(card => {
 
     });
 });
-
-function openDetails(card) {
-    console.log("Open details page");
-}
 
 function markAsWatched(card) {
     console.log("Marked as watched");
