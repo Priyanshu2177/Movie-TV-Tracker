@@ -58,6 +58,14 @@ function showPage(pageId, activeTab) {
 
     document.getElementById(pageId).classList.add("active");
     activeTab.classList.add("active");
+
+    const header = document.querySelector("header");
+
+    if (pageId === "details-page"){
+        header.style.display  = "none";
+    } else {
+        header.style.display = "flex";
+    }
 }
 
 
@@ -143,4 +151,41 @@ function openDetails(card) {
 
 function markAsWatched(card) {
     console.log("Marked as watched");
+}
+
+// separating details page
+function setActiveNav(pageId) {
+
+    document.querySelectorAll(".navigation")
+        .forEach(nav => nav.classList.remove("active"));
+
+    if (pageId === "progress-page")
+        document.getElementById("progress-tab").classList.add("active");
+
+    if (pageId === "watchlist-page")
+        document.getElementById("watchlist-tab").classList.add("active");
+
+    if (pageId === "watched-page")
+        document.getElementById("history-tab").classList.add("active");
+
+}
+
+// open details page and previous page
+let previousPage = "progress-page";
+
+function openDetails(fromPage) {
+    previousPage = fromPage;
+    showPage("details-page");
+}
+
+function goBack() {
+    showPage(previousPage);
+}
+
+document.querySelector(".back-btn").addEventListener("click", goBack);
+
+function openDetails(card) {
+    const page = card.closest(".page").id;
+    previousPage = page;
+    showPage("details-page");
 }
