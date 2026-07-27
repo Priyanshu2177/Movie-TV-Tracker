@@ -26,9 +26,20 @@ const media = {
         backdrop: "Assets/invincible-backdrop.jpg",
 
         cast: [
-            "Steven Yeun",
-            "J.K. Simmons",
-            "Sandra Oh"
+            {
+                name: "Steven Yeun",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "J.K. Simmons",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Sandra Oh",
+                image: "Assets/profile.jpeg"
+            }
         ],
 
         similar: [2, 6]
@@ -62,9 +73,20 @@ const media = {
         backdrop: "Assets/theboys-backdrop.jpg",
 
         cast: [
-            "Karl Urban",
-            "Jack Quaid",
-            "Antony Starr"
+            {
+                name: "Karl Urban",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Jack Quaid",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Antony Starr",
+                image: "Assets/profile.jpeg"
+            }
         ],
 
         similar: [1, 6]
@@ -98,9 +120,20 @@ const media = {
         backdrop: "Assets/xmen97-backdrop.jpg",
 
         cast: [
-            "Ray Chase",
-            "Jennifer Hale",
-            "Matthew Waterson"
+            {
+                name: "Ray Chase",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Jennifer Hale",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Matthew Waterson",
+                image: "Assets/profile.jpeg"
+            }
         ],
 
         similar: [1, 6]
@@ -130,9 +163,20 @@ const media = {
         backdrop: "Assets/inception-backdrop.jpg",
 
         cast: [
-            "Leonardo DiCaprio",
-            "Joseph Gordon-Levitt",
-            "Elliot Page"
+            {
+                name: "Leonardo DiCaprio",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Joseph Gordon-Levitt",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Elliot Page",
+                image: "Assets/profile.jpeg"
+            }
         ],
 
         similar: [5, 7, 8]
@@ -162,9 +206,20 @@ const media = {
         backdrop: "Assets/darkknight-backdrop.jpg",
 
         cast: [
-            "Christian Bale",
-            "Heath Ledger",
-            "Aaron Eckhart"
+            {
+                name: "Christian Bale",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Heath Ledger",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Aaron Eckhart",
+                image: "Assets/profile.jpeg"
+            }
         ],
 
         similar: [4, 7]
@@ -198,9 +253,20 @@ const media = {
         backdrop: "Assets/breakingbad-backdrop.jpg",
 
         cast: [
-            "Bryan Cranston",
-            "Aaron Paul",
-            "Anna Gunn"
+            {
+                name: "Bryan Cranston",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Aaron Paul",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Anna Gunn",
+                image: "Assets/profile.jpeg"
+            }
         ],
 
         similar: [2, 1]
@@ -229,9 +295,20 @@ const media = {
         backdrop: "Assets/shutterisland-backdrop.jpg",
 
         cast: [
-            "Leonardo DiCaprio",
-            "Mark Ruffalo",
-            "Ben Kingsley"
+            {
+                name: "Leonardo DiCaprio",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Mark Ruffalo",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Ben Kingsley",
+                image: "Assets/profile.jpeg"
+            }
         ],
 
         similar: [4, 8]
@@ -260,9 +337,20 @@ const media = {
         backdrop: "Assets/fightclub-backdrop.jpg",
 
         cast: [
-            "Brad Pitt",
-            "Edward Norton",
-            "Helena Bonham Carter"
+            {
+                name: "Brad Pitt",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Edward Norton",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Helena Bonham Carter",
+                image: "Assets/profile.jpeg"
+            }
         ],
 
         similar: [7, 4]
