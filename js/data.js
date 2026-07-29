@@ -17,6 +17,7 @@ const media = {
         status: "Returning Series",
         seasons: 2,
         episodes: 19,
+        nextEpisode: null,
 
         runtime: null,
 
@@ -64,6 +65,7 @@ const media = {
         status: "Returning Series",
         seasons: 4,
         episodes: 32,
+        nextEpisode: null,
 
         runtime: null,
 
@@ -111,6 +113,13 @@ const media = {
         status: "Returning Series",
         seasons: 2,
         episodes: 20,
+        
+        nextEpisode: {
+            season: 2,
+            episode: 7,
+            title: "Strange Land, Savage Heart",
+            releaseDate: "2026-07-29"
+        },
 
         runtime: null,
 
@@ -155,6 +164,7 @@ const media = {
             "Thriller"
         ],
 
+        nextEpisode: null,
         runtime: "2h 28m",
 
         overview: "A skilled thief who steals secrets through dream-sharing technology is offered a chance to erase his criminal past by planting an idea into a target's subconscious.",
@@ -198,6 +208,7 @@ const media = {
             "Drama"
         ],
 
+        nextEpisode: null,
         runtime: "2h 32m",
 
         overview: "Batman faces the Joker, a criminal mastermind who plunges Gotham City into chaos while forcing the Dark Knight to confront impossible moral choices.",
@@ -244,6 +255,7 @@ const media = {
         status: "Ended",
         seasons: 5,
         episodes: 62,
+        nextEpisode: null,
 
         runtime: null,
 
@@ -287,6 +299,7 @@ const media = {
             "Thriller"
         ],
 
+        nextEpisode: null,
         runtime: "2h 18m",
 
         overview: "Two U.S. Marshals investigate the disappearance of a patient from a psychiatric hospital on a remote island, uncovering disturbing truths along the way.",
@@ -329,6 +342,7 @@ const media = {
             "Thriller"
         ],
 
+        nextEpisode: null,
         runtime: "2h 19m",
 
         overview: "An office worker suffering from insomnia forms an underground fight club with a charismatic soap salesman, leading to unexpected consequences.",

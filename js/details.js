@@ -19,9 +19,103 @@ cards.forEach(card => {
 function openDetails(card) {
     const page = card.closest(".page").id;
     previousPage = page;
+    renderDetails(card.dataset.id);
     showPage("details-page");
 }
 
 function markAsWatched(card) {
     console.log("Marked as watched");
+}
+
+// defining variables
+const detailsPoster =
+    document.getElementById("details-poster");
+
+const detailsTitle =
+    document.getElementById("details-title");
+
+const detailsRating =
+    document.getElementById("details-rating");
+
+const detailsGenres =
+    document.getElementById("details-genres");
+
+const detailsMeta =
+    document.getElementById("details-meta");
+
+const detailsOverview =
+    document.getElementById("details-overview");
+
+const castList =
+    document.getElementById("cast-list");
+
+const similarList =
+    document.getElementById("similar-list");
+
+// renderDetails function
+function renderDetails(id) {
+    const item = media[id];
+
+    detailsPoster.src = item.poster;
+    detailsTitle.textContent = item.title;
+    detailsRating.textContent = item.rating;
+    detailsGenres.textContent = item.genres.join(" • ");
+    detailsOverview.textContent = item.overview;
+    if (item.type === "movie") {
+        detailsMeta.innerHTML = `
+        <span>${item.year}</span>
+        <span>•</span>
+        <span>${item.runtime}</span>
+    `;
+    } else {
+        detailsMeta.innerHTML = `
+        <span>${item.year}</span>
+        <span>•</span>
+        <span>${item.seasons} Season${item.seasons > 1 ? "s" : ""}</span>
+        <span>•</span>
+        <span>${item.status}</span>
+    `;
+    }
+    renderCast(item)
+    renderSimilar(item)
+
+}
+
+//renderCast function
+function renderCast(item) {
+    castList.innerHTML = "";
+
+    item.cast.forEach(actor => {
+        const castCard = document.createElement("div");
+        castCard.className = "cast-card";
+
+        castCard.innerHTML = `
+            <img src="${actor.image}" alt="${actor.name}">
+            <span>${actor.name}</span>
+        `;
+        castList.appendChild(castCard);
+    });
+
+}
+
+// similar movies
+function renderSimilar(item) {
+    similarList.innerHTML = "";
+
+    item.similar.forEach(id => {
+        const similarMovie = media[id];
+        const similarCard = document.createElement("div");
+        similarCard.className = "similar-card";
+
+        similarCard.innerHTML = `
+            <img src="${similarMovie.poster}" alt="${similarMovie.title}">
+            <p>${similarMovie.title}</p>
+        `;
+        similarList.appendChild(similarCard);
+
+        similarCard.addEventListener("click", () => {
+            renderDetails(similarMovie.id);
+        });
+    });
+
 }
