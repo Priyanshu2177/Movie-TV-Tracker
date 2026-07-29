@@ -58,6 +58,14 @@ function setActiveNav(pageId) {
 let previousPage = "progress-page";
 
 function goBack() {
+    if (detailsHistory.length > 0) {
+        const previousMedia = detailsHistory.pop();
+        renderDetails(previousMedia);
+        window.scrollTo(0, 0);
+        return;
+    }
+
     showPage(previousPage);
 }
+
 document.querySelector(".back-btn").addEventListener("click", goBack);

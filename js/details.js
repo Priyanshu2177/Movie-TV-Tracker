@@ -1,5 +1,6 @@
 // Click card and check button
 const cards = document.querySelectorAll(".media-card");
+let detailsHistory = [];
 
 cards.forEach(card => {
     card.addEventListener("click", function (e) {
@@ -19,6 +20,8 @@ cards.forEach(card => {
 function openDetails(card) {
     const page = card.closest(".page").id;
     previousPage = page;
+    detailsHistory = [];
+
     renderDetails(card.dataset.id);
     showPage("details-page");
 }
@@ -52,22 +55,35 @@ const castList =
 const similarList =
     document.getElementById("similar-list");
 
+const similarHeading = 
+    document.getElementById("similar-heading")
+
+    
+let currentMediaId = null
+
 // renderDetails function
 function renderDetails(id) {
+    currentMediaId = id;
     const item = media[id];
+
+    if(!item) return;
 
     detailsPoster.src = item.poster;
     detailsTitle.textContent = item.title;
-    detailsRating.textContent = item.rating;
+    detailsRating.textContent = item.rating.toFixed(1);
     detailsGenres.textContent = item.genres.join(" • ");
     detailsOverview.textContent = item.overview;
     if (item.type === "movie") {
+        similarHeading.textContent = "Similar Movies";
+        
         detailsMeta.innerHTML = `
         <span>${item.year}</span>
         <span>•</span>
         <span>${item.runtime}</span>
     `;
     } else {
+        similarHeading.textContent = "Similar Shows";
+
         detailsMeta.innerHTML = `
         <span>${item.year}</span>
         <span>•</span>
@@ -76,8 +92,10 @@ function renderDetails(id) {
         <span>${item.status}</span>
     `;
     }
-    renderCast(item)
-    renderSimilar(item)
+
+    renderCast(item);
+
+    renderSimilar(item);
 
 }
 
@@ -102,8 +120,8 @@ function renderCast(item) {
 function renderSimilar(item) {
     similarList.innerHTML = "";
 
-    item.similar.forEach(id => {
-        const similarMovie = media[id];
+    item.similar.forEach(similarId => {
+        const similarMovie = media[similarId];
         const similarCard = document.createElement("div");
         similarCard.className = "similar-card";
 
@@ -114,7 +132,14 @@ function renderSimilar(item) {
         similarList.appendChild(similarCard);
 
         similarCard.addEventListener("click", () => {
-            renderDetails(similarMovie.id);
+            detailsHistory.push(currentMediaId);
+            currentMediaId = similarMovie.id;
+            renderDetails(currentMediaId);
+            
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
         });
     });
 
