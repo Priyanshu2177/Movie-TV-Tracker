@@ -40,3 +40,9 @@ setupMediaTabs(
     "history-movies",
     "history-shows"
 );
+
+setupMediaTabs(
+    "progress-tabs",
+    "progress-watching",
+    "progress-recent"
+);

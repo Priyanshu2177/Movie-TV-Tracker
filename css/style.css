@@ -159,7 +159,7 @@ main{
     gap: 14px;
 }
 
-.progress-container .prog-poster{
+.media-container .prog-poster{
     height: 90px;
     width: 60px;
     border-radius: 8px;
@@ -173,6 +173,7 @@ main{
     height: 86px;
     justify-content: space-between;
 }
+
 .ep-info .title{
     font-size: 19px;
     line-height: 1.2;
