@@ -83,83 +83,94 @@
 
     <main id="content">
         <section id="progress-page" class="page active">
-            <div class="progress-container">
-                <div data-id="1" data-type="tv" class=" media-card progress-card">
-                    <img src="Assets/progress-image.jpg" alt="Invincible" class="prog-poster">
-                    <div class="ep-info">
-                        <div class="title">
-                            Invincible
-                        </div>
-                        <div class="ep-details">
-                            <div class="episode">
-                                <span class="ep-number">S.02 E.04</span>
-                                <span class="ep-name">It's Been a While</span>
+            <div id="progress-tabs" class="media-tabs">
+                <button class="active">Watching</button>
+                <button>Recent</button>
+            </div>
+            <div class="media-container">
+                <div id="progress-watching" class="media-list active">
+
+                    <div data-id="1" data-type="tv" class=" media-card progress-card">
+                        <img src="Assets/progress-image.jpg" alt="Invincible" class="prog-poster">
+                        <div class="ep-info">
+                            <div class="title">
+                                Invincible
                             </div>
-
-                            <div class="date">Released: 24 Nov 2023</div>
-
-                            <div class="progress">
-                                <span id="status"></span>
-                                <div class="progress-bar">
-                                    <div class="progress-value progress-value-1"></div>
+                            <div class="ep-details">
+                                <div class="episode">
+                                    <span class="ep-number">S.02 E.04</span>
+                                    <span class="ep-name">It's Been a While</span>
+                                </div>
+    
+                                <div class="date">Released: 24 Nov 2023</div>
+    
+                                <div class="progress">
+                                    <span id="status"></span>
+                                    <div class="progress-bar">
+                                        <div class="progress-value progress-value-1"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+    
+                        <i class="fa-regular fa-circle-check watch"></i>
                     </div>
-
-                    <i class="fa-regular fa-circle-check watch"></i>
+    
+                    <div data-id="2" data-type="tv" class="media-card progress-card">
+                        <img src="Assets/progress-image.jpg" alt="The Boys" class="prog-poster">
+                        <div class="ep-info">
+                            <div class="title">
+                                The Boys
+                            </div>
+                            <div class="ep-details">
+                                <div class="episode">
+                                    <span class="ep-number">S.04 E.03</span>
+                                    <span class="ep-name">We'll Keep the Red Flag Flying Here</span>
+                                </div>
+    
+                                <div class="date">Released: 13 Jun 2024</div>
+    
+                                <div class="progress">
+                                    <span id="status2"></span>
+                                    <div class="progress-bar">
+                                        <div class="progress-value progress-value-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <i class="fa-regular fa-circle-check watch"></i>
+                    </div>
+    
+                    <div data-id="3" data-type="tv" class="media-card progress-card">
+                        <img src="Assets/progress-image.jpg" alt="X-Men '97" class="prog-poster">
+                        <div class="ep-info">
+                            <div class="title">
+                                X-Men '97
+                            </div>
+                            <div class="ep-details">
+                                <div class="episode">
+                                    <span class="ep-number">S.02 E.07</span>
+                                    <span class="ep-name">Strange Land, Savage Heart</span>
+                                </div>
+    
+                                <div class="date upcoming">Releases: 29 Jul 2026</div>
+    
+                                <div class="progress">
+                                    <span id="status3"></span>
+                                    <div class="progress-bar">
+                                        <div class="progress-value progress-value-3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <i class="fa-regular fa-circle-check watch"></i>
+                    </div>
                 </div>
 
-                <div data-id="2" data-type="tv" class="media-card progress-card">
-                    <img src="Assets/progress-image.jpg" alt="The Boys" class="prog-poster">
-                    <div class="ep-info">
-                        <div class="title">
-                            The Boys
-                        </div>
-                        <div class="ep-details">
-                            <div class="episode">
-                                <span class="ep-number">S.04 E.03</span>
-                                <span class="ep-name">We'll Keep the Red Flag Flying Here</span>
-                            </div>
-
-                            <div class="date">Released: 13 Jun 2024</div>
-
-                            <div class="progress">
-                                <span id="status2"></span>
-                                <div class="progress-bar">
-                                    <div class="progress-value progress-value-2"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <i class="fa-regular fa-circle-check watch"></i>
-                </div>
-
-                <div data-id="3" data-type="tv" class="media-card progress-card">
-                    <img src="Assets/progress-image.jpg" alt="X-Men '97" class="prog-poster">
-                    <div class="ep-info">
-                        <div class="title">
-                            X-Men '97
-                        </div>
-                        <div class="ep-details">
-                            <div class="episode">
-                                <span class="ep-number">S.02 E.07</span>
-                                <span class="ep-name">Strange Land, Savage Heart</span>
-                            </div>
-
-                            <div class="date upcoming">Releases: 29 Jul 2026</div>
-
-                            <div class="progress">
-                                <span id="status3"></span>
-                                <div class="progress-bar">
-                                    <div class="progress-value progress-value-3"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <i class="fa-regular fa-circle-check watch"></i>
+                <div id="progress-recent" class="media-list">
+                    
                 </div>
             </div>
         </section>
@@ -369,7 +380,7 @@
                 </div>
 
                 <div class="details-section">
-                    <h2 >Overview</h2>
+                    <h2>Overview</h2>
                     <p id="details-overview"></p>
                 </div>
 
