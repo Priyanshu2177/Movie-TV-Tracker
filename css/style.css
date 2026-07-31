@@ -347,6 +347,33 @@ main{
     color: #666;
 }
 
+.history-progress{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.history-progress-bar{
+    flex: 1;
+    height: 7px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.history-progress-value{
+    width: 58%;
+    height: 100%;
+    background: #FFD54F;
+}
+
+.history-percentage{
+    font-size: 13px;
+    font-weight: 600;
+    min-width: 38px;
+    text-align: right;
+}
 .back-btn{
     display: flex;
     align-items: center;
