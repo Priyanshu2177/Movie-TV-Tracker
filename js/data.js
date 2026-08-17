@@ -375,31 +375,37 @@ const media = {
 const userData = {
     1: {
         inWatchlist: false,
-        watchedEpisodes: 3,
+        watchedEpisodes: 11,
         totalEpisodes: 32,
-        lastWatchedEpisode: {
+        nextEpisode: {
             season: 2,
-            episode: 3
+            episode: 4,
+            title: "It's Been a While",
+            releaseDate: "24 Nov 2023"
         }
     },
 
     2: {
         inWatchlist: false,
-        watchedEpisodes: 2,
+        watchedEpisodes: 26,
         totalEpisodes: 40,
-        lastWatchedEpisode: {
+        nextEpisode: {
             season: 4,
-            episode: 2
+            episode: 3,
+            title: "We'll Keep the Red Flag Flying Here",
+            releaseDate: "13 Jun 2024"
         }
     },
 
     3: {
         inWatchlist: false,
-        watchedEpisodes: 6,
+        watchedEpisodes: 16,
         totalEpisodes: 19,
-        lastWatchedEpisode: {
+        nextEpisode: {
             season: 2,
-            episode: 6
+            episode: 7,
+            title: "Strange Land, Savage Heart",
+            releaseDate: "29 Jul 2026"
         }
     },
 
