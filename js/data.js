@@ -16,7 +16,7 @@ const media = {
 
         status: "Returning Series",
         seasons: 2,
-        episodes: 19,
+        episodes: 32,
         nextEpisode: null,
 
         runtime: null,
@@ -64,7 +64,7 @@ const media = {
 
         status: "Returning Series",
         seasons: 4,
-        episodes: 32,
+        episodes: 40,
         nextEpisode: null,
 
         runtime: null,
@@ -112,7 +112,7 @@ const media = {
 
         status: "Returning Series",
         seasons: 2,
-        episodes: 20,
+        episodes: 19,
         
         nextEpisode: {
             season: 2,
@@ -370,4 +370,63 @@ const media = {
         similar: [7, 4]
     }
 
+};
+
+const userData = {
+    1: {
+        inWatchlist: false,
+        watchedEpisodes: 3,
+        totalEpisodes: 32,
+        lastWatchedEpisode: {
+            season: 2,
+            episode: 3
+        }
+    },
+
+    2: {
+        inWatchlist: false,
+        watchedEpisodes: 2,
+        totalEpisodes: 40,
+        lastWatchedEpisode: {
+            season: 4,
+            episode: 2
+        }
+    },
+
+    3: {
+        inWatchlist: false,
+        watchedEpisodes: 6,
+        totalEpisodes: 19,
+        lastWatchedEpisode: {
+            season: 2,
+            episode: 6
+        }
+    },
+
+    4: {
+        inWatchlist: true,
+        watched: false
+    },
+
+    5: {
+        inWatchlist: true,
+        watched: false
+    },
+
+    6: {
+        inWatchlist: true,
+        watchedEpisodes: 0,
+        totalEpisodes: 62,
+        lastWatchedEpisode: null
+    },
+
+    7: {
+        inWatchlist: false,
+        watched: true
+    },
+
+    8: {
+        inWatchlist: false,
+        watched: true
+    }
 };
