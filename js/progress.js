@@ -1,8 +1,8 @@
 // Progress Tab
 function renderWatching() {
-    const watchingContainer = 
+    const watchingContainer =
         document.getElementById("progress-watching");
-    
+
     watchingContainer.innerHTML = ""
 
     Object.keys(userData).forEach(id => {
@@ -10,8 +10,8 @@ function renderWatching() {
         const item = media[id];
         const user = userData[id]
 
-        if(!item || item.type !== "tv") return;
-        if(!user.watchedEpisodes || user.watchedEpisodes <= 0) return;
+        if (!item || item.type !== "tv") return;
+        if (!user.watchedEpisodes || user.watchedEpisodes <= 0) return;
 
         const nextEpisode = user.nextEpisode;
         const percentage =
@@ -41,21 +41,21 @@ function renderWatching() {
                     <div class="episode">
                         <span class="ep-number">
                             ${nextEpisode
-                                ? `S.${String(nextEpisode.season).padStart(2,"0")} E.${String(nextEpisode.episode).padStart(2,"0")}`
-                                : ""}
+                ? `S.${String(nextEpisode.season).padStart(2, "0")} E.${String(nextEpisode.episode).padStart(2, "0")}`
+                : ""}
                         </span>
 
                         <span class="ep-name">
                             ${nextEpisode
-                                ? nextEpisode.title
-                                : ""}
+                ? nextEpisode.title
+                : ""}
                         </span>
                     </div>
 
                     <div class="date ${nextEpisode ? "" : "upcoming"}">
                         ${nextEpisode
-                            ? `Released: ${nextEpisode.releaseDate}`
-                            : ""}
+                ? `Released: ${nextEpisode.releaseDate}`
+                : ""}
                     </div>
 
                     <div class="progress">
@@ -78,7 +78,7 @@ function renderWatching() {
 
         watchingContainer.appendChild(card);
 
-    })
+    });
 }
 
 renderWatching();
@@ -92,7 +92,7 @@ function renderRecent() {
     recentActivity.forEach(activity => {
         const item = media[activity.mediaId];
 
-        if(!item || item.type !== "tv") return;
+        if (!item || item.type !== "tv") return;
 
         const card = document.createElement("div")
 
@@ -118,7 +118,9 @@ function renderRecent() {
                 </div>
 
                 <div class="episode-name">
-                    ${item.episodeData?.[activity.season]?.[activity.episode]?.title || ""}
+                    ${item.episodes?.[
+                        `${activity.season}-${activity.episode}`
+                    ]?.title || ""}
                 </div>
 
                 <div class="history-date">
@@ -128,7 +130,7 @@ function renderRecent() {
         `;
 
         recentContainer.appendChild(card);
-    })
+    });
 }
 
 renderRecent();

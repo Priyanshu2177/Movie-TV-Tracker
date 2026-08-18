@@ -18,6 +18,21 @@ const media = {
         seasons: 2,
         episodes: 32,
         nextEpisode: null,
+        episodes: {
+            "2-3": {
+                season: 2,
+                episode: 3,
+                title: "This Missive, This Machination!",
+                releaseDate: "17 Nov 2023"
+            },
+
+            "2-4": {
+                season: 2,
+                episode: 4,
+                title: "It's Been a While",
+                releaseDate: "24 Nov 2023"
+            }
+        },
 
         runtime: null,
 
@@ -66,6 +81,28 @@ const media = {
         seasons: 4,
         episodes: 40,
         nextEpisode: null,
+        episodes: {
+            "4-1": {
+                season: 4,
+                episode: 1,
+                title: "Department of Dirty Tricks",
+                releaseDate: "13 Jun 2024"
+            },
+
+            "4-2": {
+                season: 4,
+                episode: 2,
+                title: "Life Among the Septics",
+                releaseDate: "13 Jun 2024"
+            },
+
+            "4-3": {
+                season: 4,
+                episode: 3,
+                title: "We'll Keep the Red Flag Flying Here",
+                releaseDate: "13 Jun 2024"
+            }
+        },
 
         runtime: null,
 
@@ -113,12 +150,21 @@ const media = {
         status: "Returning Series",
         seasons: 2,
         episodes: 19,
-        
-        nextEpisode: {
-            season: 2,
-            episode: 7,
-            title: "Strange Land, Savage Heart",
-            releaseDate: "2026-07-29"
+        nextEpisode: null,
+        episodes: {
+            "2-6": {
+                season: 2,
+                episode: 6,
+                title: "Danger.exe",
+                releaseDate: "22 Jul 2026"
+            },
+
+            "2-7": {
+                season: 2,
+                episode: 7,
+                title: "Strange Land, Savage Heart",
+                releaseDate: "29 Jul 2026"
+            }
         },
 
         runtime: null,
