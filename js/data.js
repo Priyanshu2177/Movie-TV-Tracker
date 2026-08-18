@@ -428,12 +428,14 @@ const userData = {
 
     7: {
         inWatchlist: false,
-        watched: true
+        watched: true,
+        watchedDate: "18 Jul 2026"
     },
 
     8: {
         inWatchlist: false,
-        watched: true
+        watched: true,
+        watchedDate: "14 Jul 2026"
     }
 };
 
