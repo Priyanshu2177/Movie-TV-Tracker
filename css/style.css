@@ -368,6 +368,16 @@ main{
     background: #FFD54F;
 }
 
+.progress-yellow {
+    background: #FFD54F;
+}
+.progress-purple {
+    background: #9B59B6;
+}
+.progress-green {
+    background: #2ECC71;
+}
+
 .history-percentage{
     font-size: 13px;
     font-weight: 600;
