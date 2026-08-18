@@ -91,8 +91,10 @@ function renderRecent() {
 
     recentActivity.forEach(activity => {
         const item = media[activity.mediaId];
-
         if (!item || item.type !== "tv") return;
+
+        const episode = item.episodes?.[activity.episodeId];
+        if (!episode) return;
 
         const card = document.createElement("div")
 
@@ -112,15 +114,13 @@ function renderRecent() {
 
                 <div class="episode">
                     <span>
-                        S.${String(activity.season).padStart(2, "0")}
-                        E.${String(activity.episode).padStart(2, "0")}
+                        S.${String(episode.season).padStart(2, "0")}
+                        E.${String(episode.episode).padStart(2, "0")}
                     </span>
                 </div>
 
                 <div class="episode-name">
-                    ${item.episodes?.[
-                        `${activity.season}-${activity.episode}`
-                    ]?.title || ""}
+                    ${episode.title}
                 </div>
 
                 <div class="history-date">
