@@ -1,3 +1,4 @@
+// Progress Tab
 function renderWatching() {
     const watchingContainer = 
         document.getElementById("progress-watching");
@@ -81,3 +82,53 @@ function renderWatching() {
 }
 
 renderWatching();
+
+// Recent Tab
+function renderRecent() {
+    const recentContainer = document.getElementById("progress-recent");
+
+    recentContainer.innerHTML = "";
+
+    recentActivity.forEach(activity => {
+        const item = media[activity.mediaId];
+
+        if(!item || item.type !== "tv") return;
+
+        const card = document.createElement("div")
+
+        card.className = "media-card recent-card";
+        card.dataset.id = item.id;
+        card.dataset.type = item.type;
+
+        card.innerHTML = `
+            <img
+                src="${item.poster}"
+                alt="${item.title}"
+                class="watch-poster"
+            >
+
+            <div class="watch-info">
+                <h3>${item.title}</h3>
+
+                <div class="episode">
+                    <span>
+                        S.${String(activity.season).padStart(2, "0")}
+                        E.${String(activity.episode).padStart(2, "0")}
+                    </span>
+                </div>
+
+                <div class="episode-name">
+                    ${item.episodeData?.[activity.season]?.[activity.episode]?.title || ""}
+                </div>
+
+                <div class="history-date">
+                    Watched: ${activity.watchedDate}
+                </div>
+            </div>
+        `;
+
+        recentContainer.appendChild(card);
+    })
+}
+
+renderRecent();

@@ -436,3 +436,33 @@ const userData = {
         watched: true
     }
 };
+
+const recentActivity = [
+    {
+        mediaId: 1,
+        season: 2,
+        episode: 3,
+        watchedDate: "22 Jul 2026"
+    },
+
+    {
+        mediaId: 2,
+        season: 4,
+        episode: 2,
+        watchedDate: "20 Jul 2026"
+    },
+
+    {
+        mediaId: 3,
+        season: 2,
+        episode: 6,
+        watchedDate: "18 Jul 2026"
+    },
+
+    {
+        mediaId: 2,
+        season: 4,
+        episode: 1,
+        watchedDate: "17 Jul 2026"
+    }
+];
