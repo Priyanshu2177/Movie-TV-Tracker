@@ -27,7 +27,114 @@ function openDetails(card) {
 }
 
 function markAsWatched(card) {
-    console.log("Marked as watched");
+
+    const id = Number(card.dataset.id);
+    const type = card.dataset.type;
+
+    const user = userData[id];
+    if (!user) return;
+
+    // Watchlist
+    if (card.classList.contains("watchlist-card")) {
+
+        // Movie
+        if (type === "movie") {
+            user.inWatchlist = false;
+            user.watched = true;
+
+            user.watchedDate = new Date().toLocaleDateString(
+                "en-GB",
+                {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric"
+                }
+            );
+
+            saveUserData();
+
+            renderWatchlistMovies();
+            renderWatchlistMovies();
+
+            return;
+        } 
+        
+        // TV Show
+        if (type === "tv") {
+            user.inWatchlist = false;
+
+            if(!user.watchedEpisodes){
+                user.watchedEpisodes = 0;
+            }
+
+            saveUserData();
+
+            renderWatchlistShows();
+            renderWatchlistShows();
+
+            return;
+        }
+    }
+
+    // Progress
+    if (card.classList.contains("progress-card")) {
+
+        const currentEpisode = user.nextEpisode;
+
+        if (!currentEpisode) return;
+
+        const episodeId =
+            `${currentEpisode.season}-${currentEpisode.episode}`;
+
+        // Progress --> Recent
+        recentActivity.unshift({
+            mediaId: id,
+            episodeId: episodeId,
+            watchedDate: new Date().toLocaleDateString(
+                "en-GB",
+                {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric"
+                }
+            )
+        });
+
+        user.watchedEpisodes++;
+
+        // Next episode
+        const nextEpisodeNumber =
+            currentEpisode.episode + 1;
+
+        const nextEpisodeId =
+            `${currentEpisode.season}-${nextEpisodeNumber}`;
+
+        const nextEpisode =
+            media[id].episodes?.[nextEpisodeId];
+
+        if (nextEpisode) {
+
+            user.nextEpisode = {
+                season: nextEpisode.season,
+                episode: nextEpisode.episode,
+                title: nextEpisode.title,
+                releaseDate: nextEpisode.releaseDate
+            };
+
+        } else {
+
+            user.nextEpisode = null;
+
+        }
+
+        saveUserData();
+        saveRecentActivity();
+
+        renderWatching();
+        renderRecent();
+
+        return;
+    }
 }
 
 // defining variables

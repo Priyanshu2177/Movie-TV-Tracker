@@ -30,6 +30,13 @@ const media = {
                 episode: 4,
                 title: "It's Been a While",
                 releaseDate: "24 Nov 2023"
+            },
+
+            "2-5": {
+                season: 2,
+                episode: 5,
+                title: "This Must Comes as a Shock",
+                releaseDate: "14 Mar 2024"
             }
         },
 
@@ -99,6 +106,13 @@ const media = {
                 episode: 3,
                 title: "We'll Keep the Red Flag Flying Here",
                 releaseDate: "13 Jun 2024"
+            },
+
+            "4-4": {
+                season: 4,
+                episode: 4,
+                title: "Wisdom of the Ages",
+                releaseDate: "20 Jun 2024"
             }
         },
 
@@ -161,6 +175,13 @@ const media = {
                 episode: 7,
                 title: "Strange Land, Savage Heart",
                 releaseDate: "29 Jul 2026"
+            },
+
+            "2-8": {
+                season: 2,
+                episode: 8,
+                title: "The Dead Man's Hand",
+                releaseDate: "05 Aug 2026"
             }
         },
 

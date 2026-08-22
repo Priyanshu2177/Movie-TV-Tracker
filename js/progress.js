@@ -89,7 +89,7 @@ function renderRecent() {
 
     recentContainer.innerHTML = "";
 
-    recentActivity.forEach(activity => {
+    recentActivity.slice(0, 50).forEach(activity => {
         const item = media[activity.mediaId];
         if (!item || item.type !== "tv") return;
 
