@@ -17,7 +17,6 @@ const media = {
         status: "Returning Series",
         seasons: 2,
         episodes: 32,
-        nextEpisode: null,
         episodes: {
             "2-3": {
                 season: 2,
@@ -77,10 +76,9 @@ const media = {
             "Crime"
         ],
 
-        status: "Returning Series",
+        status: "Ended",
         seasons: 4,
         episodes: 40,
-        nextEpisode: null,
         episodes: {
             "4-1": {
                 season: 4,
@@ -150,7 +148,6 @@ const media = {
         status: "Returning Series",
         seasons: 2,
         episodes: 19,
-        nextEpisode: null,
         episodes: {
             "2-6": {
                 season: 2,
@@ -301,7 +298,6 @@ const media = {
         status: "Ended",
         seasons: 5,
         episodes: 62,
-        nextEpisode: null,
 
         runtime: null,
 
