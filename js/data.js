@@ -70,8 +70,6 @@ const media = {
         similar: [2, 6]
     },
 
-
-
     2: {
         id: 2,
         type: "tv",
@@ -150,8 +148,6 @@ const media = {
         similar: [1, 6]
     },
 
-
-
     3: {
         id: 3,
         type: "tv",
@@ -222,8 +218,6 @@ const media = {
         similar: [1, 6]
     },
 
-
-
     4: {
         id: 4,
         type: "movie",
@@ -265,8 +259,6 @@ const media = {
 
         similar: [5, 7, 8]
     },
-
-
 
     5: {
         id: 5,
@@ -310,8 +302,6 @@ const media = {
         similar: [4, 7]
     },
 
-
-
     6: {
         id: 6,
         type: "tv",
@@ -329,6 +319,31 @@ const media = {
         status: "Ended",
         seasons: 5,
         totalEpisodes: 62,
+        episodes: {
+            "1-1": {
+                season: 1,
+                episode: 1,
+                title: "Pilot",
+                releaseDate: "20 Jan 2008",
+                nextEpisodeId: "1-2"
+            },
+
+            "1-2": {
+                season: 1,
+                episode: 2,
+                title: "Cat's in the Bag...",
+                releaseDate: "27 Jan 2008",
+                nextEpisodeId: "1-3"
+            },
+
+            "1-3": {
+                season: 1,
+                episode: 3,
+                title: "...And the Bag's in the River",
+                releaseDate: "10 Feb 2008",
+                nextEpisodeId: null
+            }
+        },
 
         runtime: null,
 
@@ -357,10 +372,78 @@ const media = {
         similar: [2, 1]
     },
 
-
-
     7: {
         id: 7,
+        type: "tv",
+
+        title: "Stranger Things",
+        year: 2016,
+
+        rating: 8.6,
+        genres: [
+            "Mystery",
+            "Adventure",
+            "Sci-Fi"
+        ],
+
+        status: "Ended",
+        seasons: 5,
+        totalEpisodes: 42,
+        episodes: {
+            "1-1": {
+                season: 1,
+                episode: 1,
+                title: "The Vanishing of Will Byers",
+                releaseDate: "15 Jul 2016",
+                nextEpisodeId: "1-2"
+            },
+
+            "1-2": {
+                season: 1,
+                episode: 2,
+                title: "The Weirdo on Maple Street",
+                releaseDate: "15 Jul 2016",
+                nextEpisodeId: "1-3"
+            },
+
+            "1-3": {
+                season: 1,
+                episode: 3,
+                title: "Holly, Jolly",
+                releaseDate: "15 Jul 2016",
+                nextEpisodeId: null
+            }
+        },
+
+        runtime: null,
+
+        overview: "In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysteries.",
+
+        poster: "Assets/progress-image.jpg",
+        backdrop: "Assets/strangerthings-backdrop.jpg",
+
+        cast: [
+            {
+                name: "Millie Bobby Brown",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Finn Wolfhard",
+                image: "Assets/profile.jpeg"
+            },
+
+            {
+                name: "Winona Ryder",
+                image: "Assets/profile.jpeg"
+            }
+        ],
+
+        similar: [2, 1]
+    },
+
+    8: {
+        id: 8,
         type: "movie",
 
         title: "Shutter Island",
@@ -397,13 +480,11 @@ const media = {
             }
         ],
 
-        similar: [4, 8]
+        similar: [4, 9]
     },
 
-
-
-    8: {
-        id: 8,
+    9: {
+        id: 9,
         type: "movie",
 
         title: "Fight Club",
@@ -440,7 +521,7 @@ const media = {
             }
         ],
 
-        similar: [7, 4]
+        similar: [8, 4]
     }
 
 };
@@ -499,12 +580,18 @@ const userData = {
     },
 
     7: {
+        inWatchlist: true,
+        inHistory: false,
+        watchedEpisodes: 0
+    },
+
+    8: {
         inWatchlist: false,
         watched: true,
         watchedDate: "18 Jul 2026"
     },
 
-    8: {
+    9: {
         inWatchlist: false,
         watched: true,
         watchedDate: "14 Jul 2026"
