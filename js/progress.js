@@ -15,7 +15,7 @@ function renderWatching() {
 
         const nextEpisode = user.nextEpisode;
         const percentage =
-            (user.watchedEpisodes / user.totalEpisodes) * 100;
+            (user.watchedEpisodes / item.totalEpisodes) * 100;
 
         const card = document.createElement("div");
 
@@ -60,7 +60,7 @@ function renderWatching() {
 
                     <div class="progress">
                         <span>
-                            (${user.watchedEpisodes}/${user.totalEpisodes})
+                            (${user.watchedEpisodes}/${item.totalEpisodes})
                         </span>
 
                         <div class="progress-bar">

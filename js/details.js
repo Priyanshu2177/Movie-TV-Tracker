@@ -1,20 +1,19 @@
 // Click card and check button
-const cards = document.querySelectorAll(".media-card");
 let detailsHistory = [];
 
-cards.forEach(card => {
-    card.addEventListener("click", function (e) {
+document.addEventListener("click", function (e) {
+    const card = e.target.closest(".media-card");
 
-        // Was the check icon clicked?
-        if (e.target.closest(".watch, .watch-action")) {
-            markAsWatched(card);
-            return;
-        }
+    if (!card) return;
 
-        // Otherwise, the card itself was clicked
-        openDetails(card);
+    // Was the check icon clicked?
+    if (e.target.closest(".watch, .watch-action")) {
+        markAsWatched(card);
+        return;
+    }
 
-    });
+    // Otherwise, the card itself was clicked
+    openDetails(card);
 });
 
 function openDetails(card) {
@@ -26,6 +25,7 @@ function openDetails(card) {
     showPage("details-page");
 }
 
+// Check Button
 function markAsWatched(card) {
 
     const id = Number(card.dataset.id);
@@ -54,23 +54,24 @@ function markAsWatched(card) {
             saveUserData();
 
             renderWatchlistMovies();
-            renderWatchlistMovies();
+            renderHistoryMovies();
 
             return;
-        } 
-        
+        }
+
         // TV Show
         if (type === "tv") {
             user.inWatchlist = false;
+            user.inHistory = true;
 
-            if(!user.watchedEpisodes){
+            if (!user.watchedEpisodes) {
                 user.watchedEpisodes = 0;
             }
 
             saveUserData();
 
             renderWatchlistShows();
-            renderWatchlistShows();
+            renderHistoryShows();
 
             return;
         }
@@ -103,14 +104,19 @@ function markAsWatched(card) {
         user.watchedEpisodes++;
 
         // Next episode
-        const nextEpisodeNumber =
-            currentEpisode.episode + 1;
+        const currentEpisodeId =
+            `${currentEpisode.season}-${currentEpisode.episode}`;
+
+        const currentEpisodeData =
+            media[id].episodes?.[currentEpisodeId];
 
         const nextEpisodeId =
-            `${currentEpisode.season}-${nextEpisodeNumber}`;
+            currentEpisodeData?.nextEpisodeId;
 
         const nextEpisode =
-            media[id].episodes?.[nextEpisodeId];
+            nextEpisodeId
+                ? media[id].episodes?.[nextEpisodeId]
+                : null;
 
         if (nextEpisode) {
 
@@ -162,10 +168,10 @@ const castList =
 const similarList =
     document.getElementById("similar-list");
 
-const similarHeading = 
+const similarHeading =
     document.getElementById("similar-heading")
 
-    
+
 let currentMediaId = null
 
 // renderDetails function
@@ -173,7 +179,7 @@ function renderDetails(id) {
     currentMediaId = id;
     const item = media[id];
 
-    if(!item) return;
+    if (!item) return;
 
     detailsPoster.src = item.poster;
     detailsTitle.textContent = item.title;
@@ -182,7 +188,7 @@ function renderDetails(id) {
     detailsOverview.textContent = item.overview;
     if (item.type === "movie") {
         similarHeading.textContent = "Similar Movies";
-        
+
         detailsMeta.innerHTML = `
         <span>${item.year}</span>
         <span>•</span>
@@ -242,7 +248,7 @@ function renderSimilar(item) {
             detailsHistory.push(currentMediaId);
             currentMediaId = similarMovie.id;
             renderDetails(currentMediaId);
-            
+
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"

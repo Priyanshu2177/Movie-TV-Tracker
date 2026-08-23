@@ -67,11 +67,11 @@ function renderHistoryShows() {
 
         if (!item || item.type !== "tv") return;
 
-        if (!user.watchedEpisodes || user.watchedEpisodes <= 0) return;
+        if (!user.inHistory) return;
 
         const percentage =
             Math.round(
-                (user.watchedEpisodes / user.totalEpisodes) * 100
+                (user.watchedEpisodes / item.totalEpisodes) * 100
             );
         
         let progressClass = "progress-yellow";

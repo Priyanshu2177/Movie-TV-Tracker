@@ -16,27 +16,30 @@ const media = {
 
         status: "Returning Series",
         seasons: 2,
-        episodes: 32,
+        totalEpisodes: 32,
         episodes: {
             "2-3": {
                 season: 2,
                 episode: 3,
                 title: "This Missive, This Machination!",
-                releaseDate: "17 Nov 2023"
+                releaseDate: "17 Nov 2023",
+                nextEpisodeId: "2-4"
             },
 
             "2-4": {
                 season: 2,
                 episode: 4,
                 title: "It's Been a While",
-                releaseDate: "24 Nov 2023"
+                releaseDate: "24 Nov 2023",
+                nextEpisodeId: "2-5"
             },
 
             "2-5": {
                 season: 2,
                 episode: 5,
                 title: "This Must Comes as a Shock",
-                releaseDate: "14 Mar 2024"
+                releaseDate: "14 Mar 2024",
+                nextEpisodeId: null
             }
         },
 
@@ -85,34 +88,38 @@ const media = {
 
         status: "Ended",
         seasons: 4,
-        episodes: 40,
+        totalEpisodes: 40,
         episodes: {
             "4-1": {
                 season: 4,
                 episode: 1,
                 title: "Department of Dirty Tricks",
-                releaseDate: "13 Jun 2024"
+                releaseDate: "13 Jun 2024",
+                nextEpisodeId: "4-2"
             },
 
             "4-2": {
                 season: 4,
                 episode: 2,
                 title: "Life Among the Septics",
-                releaseDate: "13 Jun 2024"
+                releaseDate: "13 Jun 2024",
+                nextEpisodeId: "4-3"
             },
 
             "4-3": {
                 season: 4,
                 episode: 3,
                 title: "We'll Keep the Red Flag Flying Here",
-                releaseDate: "13 Jun 2024"
+                releaseDate: "13 Jun 2024",
+                nextEpisodeId: "4-4"
             },
 
             "4-4": {
                 season: 4,
                 episode: 4,
                 title: "Wisdom of the Ages",
-                releaseDate: "20 Jun 2024"
+                releaseDate: "20 Jun 2024",
+                nextEpisodeId: null
             }
         },
 
@@ -161,27 +168,30 @@ const media = {
 
         status: "Returning Series",
         seasons: 2,
-        episodes: 19,
+        totalEpisodes: 19,
         episodes: {
             "2-6": {
                 season: 2,
                 episode: 6,
                 title: "Danger.exe",
-                releaseDate: "22 Jul 2026"
+                releaseDate: "22 Jul 2026",
+                nextEpisodeId: "2-7"
             },
 
             "2-7": {
                 season: 2,
                 episode: 7,
                 title: "Strange Land, Savage Heart",
-                releaseDate: "29 Jul 2026"
+                releaseDate: "29 Jul 2026",
+                nextEpisodeId: "2-8"
             },
 
             "2-8": {
                 season: 2,
                 episode: 8,
                 title: "The Dead Man's Hand",
-                releaseDate: "05 Aug 2026"
+                releaseDate: "05 Aug 2026",
+                nextEpisodeId: null
             }
         },
 
@@ -318,7 +328,7 @@ const media = {
 
         status: "Ended",
         seasons: 5,
-        episodes: 62,
+        totalEpisodes: 62,
 
         runtime: null,
 
@@ -438,8 +448,8 @@ const media = {
 const userData = {
     1: {
         inWatchlist: false,
+        inHistory: true,
         watchedEpisodes: 11,
-        totalEpisodes: 32,
         nextEpisode: {
             season: 2,
             episode: 4,
@@ -450,8 +460,8 @@ const userData = {
 
     2: {
         inWatchlist: false,
+        inHistory: true,
         watchedEpisodes: 26,
-        totalEpisodes: 40,
         nextEpisode: {
             season: 4,
             episode: 3,
@@ -462,8 +472,8 @@ const userData = {
 
     3: {
         inWatchlist: false,
+        inHistory: true,
         watchedEpisodes: 16,
-        totalEpisodes: 19,
         nextEpisode: {
             season: 2,
             episode: 7,
@@ -484,9 +494,8 @@ const userData = {
 
     6: {
         inWatchlist: true,
-        watchedEpisodes: 0,
-        totalEpisodes: 62,
-        lastWatchedEpisode: null
+        inHistory: false,
+        watchedEpisodes: 0
     },
 
     7: {
