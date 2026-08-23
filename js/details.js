@@ -68,10 +68,31 @@ function markAsWatched(card) {
                 user.watchedEpisodes = 0;
             }
 
+            if (!user.nextEpisode) {
+
+                const firstEpisodeId =
+                    Object.keys(media[id].episodes || {})[0];
+
+                const firstEpisode =
+                    firstEpisodeId
+                        ? media[id].episodes[firstEpisodeId]
+                        : null;
+
+                if (firstEpisode) {
+                    user.nextEpisode = {
+                        season: firstEpisode.season,
+                        episode: firstEpisode.episode,
+                        title: firstEpisode.title,
+                        releaseDate: firstEpisode.releaseDate
+                    };
+                }
+            }
+
             saveUserData();
 
             renderWatchlistShows();
             renderHistoryShows();
+            renderWatching();
 
             return;
         }

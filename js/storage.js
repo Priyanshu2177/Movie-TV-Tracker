@@ -44,6 +44,13 @@ function loadRecentActivity() {
     recentActivity.push(...parsedActivity);
 }
 
+function resetCineTimeData() {
+
+    localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(RECENT_KEY);
+
+    location.reload();
+}
 
 loadUserData();
 loadRecentActivity();

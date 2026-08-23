@@ -11,7 +11,7 @@ function renderWatching() {
         const user = userData[id]
 
         if (!item || item.type !== "tv") return;
-        if (!user.watchedEpisodes || user.watchedEpisodes <= 0) return;
+        if (!user.nextEpisode) return;
 
         const nextEpisode = user.nextEpisode;
         const percentage =
