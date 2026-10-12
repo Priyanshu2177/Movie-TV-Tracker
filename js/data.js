@@ -17,6 +17,7 @@ const media = {
         status: "Returning Series",
         seasons: 2,
         totalEpisodes: 32,
+        episodesComplete: false,
         episodes: {
             "2-3": {
                 season: 2,
@@ -87,6 +88,7 @@ const media = {
         status: "Ended",
         seasons: 4,
         totalEpisodes: 40,
+        episodesComplete: false,
         episodes: {
             "4-1": {
                 season: 4,
@@ -165,6 +167,7 @@ const media = {
         status: "Returning Series",
         seasons: 2,
         totalEpisodes: 19,
+        episodesComplete: false,
         episodes: {
             "2-6": {
                 season: 2,
@@ -319,6 +322,7 @@ const media = {
         status: "Ended",
         seasons: 5,
         totalEpisodes: 62,
+        episodesComplete: false,
         episodes: {
             "1-1": {
                 season: 1,
@@ -389,6 +393,7 @@ const media = {
         status: "Ended",
         seasons: 5,
         totalEpisodes: 42,
+        episodesComplete: false,
         episodes: {
             "1-1": {
                 season: 1,
@@ -576,13 +581,15 @@ const userData = {
     6: {
         inWatchlist: true,
         inHistory: false,
-        watchedEpisodes: 0
+        watchedEpisodes: 0,
+        nextEpisode: null
     },
 
     7: {
         inWatchlist: true,
         inHistory: false,
-        watchedEpisodes: 0
+        watchedEpisodes: 0,
+        nextEpisode: null
     },
 
     8: {

@@ -64,6 +64,7 @@ header .header-actions{
     overflow: hidden;
     max-height: 480px;
     overflow-y: auto;
+    visibility: hidden;
 }
 .search-item{
     display: flex;

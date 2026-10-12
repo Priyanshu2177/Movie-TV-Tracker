@@ -186,6 +186,12 @@ const detailsOverview =
 const castList =
     document.getElementById("cast-list");
 
+const episodesSection = 
+    document.getElementById("episodes-section");
+
+const episodesList = 
+    document.getElementById("episodes-list");
+
 const similarList =
     document.getElementById("similar-list");
 
@@ -201,6 +207,16 @@ function renderDetails(id) {
     const item = media[id];
 
     if (!item) return;
+
+    if (item.type === 'tv') {
+        episodesSection.style.display = "block"
+    } else {
+        episodesSection.style.display = "none"
+    }
+
+    if (item.type === 'tv') {
+        renderEpisodes(item);
+    }
 
     detailsPoster.src = item.poster;
     detailsTitle.textContent = item.title;
@@ -231,6 +247,24 @@ function renderDetails(id) {
 
     renderSimilar(item);
 
+}
+
+// renderEpisodes function
+function renderEpisodes(item) {
+    episodesList.innerHTML = ""
+
+    Object.values(item.episodes || {}).forEach(episode => {
+        const episodeCard = document.createElement("div");
+        episodeCard.className = "episode-card";
+
+        episodeCard.innerHTML = `
+            <h3>Season ${episode.season}, Episode ${episode.episode} </h3>
+            <p>${episode.title}</p>
+            <p>${episode.releaseDate}</p>
+        `;
+
+        episodesList.appendChild(episodeCard);
+    });
 }
 
 //renderCast function
