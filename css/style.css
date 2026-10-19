@@ -532,6 +532,48 @@ main{
     font-weight:500;
 }
 
+.episode-card{
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+}
+
+.episode-card h3{
+    margin: 0 0 6px;
+    font-size: 16px;
+}
+
+.episode-card p{
+    margin: 4px 0;
+}
+
+.episode-watch-btn.unwatched {
+    background: transparent;
+    color: var(--theme-color, #f5c518);
+    border: none;
+    font-size: 24px;
+    padding: 4px;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.episode-watch-btn.unwatched:hover{
+    transform: scale(1.1);
+}
+
+.episode-watch-btn.watched {
+    background: transparent;
+    color: #4be878;
+    border: none;
+    font-size: 24px;
+    padding: 4px;
+    cursor: default;
+    opacity: 1;
+}
+
+.episode-watch-btn.watched:disabled {
+    opacity: 1;
+}
 
 .bottom{
     position: fixed;

@@ -536,6 +536,7 @@ const userData = {
         inWatchlist: false,
         inHistory: true,
         watchedEpisodes: 11,
+        watchedEpisodeIds: ["2-3"],
         nextEpisode: {
             season: 2,
             episode: 4,
@@ -548,6 +549,7 @@ const userData = {
         inWatchlist: false,
         inHistory: true,
         watchedEpisodes: 26,
+        watchedEpisodeIds: ["4-2"],
         nextEpisode: {
             season: 4,
             episode: 3,
@@ -560,6 +562,7 @@ const userData = {
         inWatchlist: false,
         inHistory: true,
         watchedEpisodes: 16,
+        watchedEpisodeIds: ["2-6"],
         nextEpisode: {
             season: 2,
             episode: 7,
@@ -582,6 +585,7 @@ const userData = {
         inWatchlist: true,
         inHistory: false,
         watchedEpisodes: 0,
+        watchedEpisodeIds: [],
         nextEpisode: null
     },
 
@@ -589,6 +593,7 @@ const userData = {
         inWatchlist: true,
         inHistory: false,
         watchedEpisodes: 0,
+        watchedEpisodeIds: [],
         nextEpisode: null
     },
 

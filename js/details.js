@@ -100,66 +100,13 @@ function markAsWatched(card) {
 
     // Progress
     if (card.classList.contains("progress-card")) {
-
         const currentEpisode = user.nextEpisode;
-
         if (!currentEpisode) return;
-
-        const episodeId =
-            `${currentEpisode.season}-${currentEpisode.episode}`;
-
-        // Progress --> Recent
-        recentActivity.unshift({
-            mediaId: id,
-            episodeId: episodeId,
-            watchedDate: new Date().toLocaleDateString(
-                "en-GB",
-                {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric"
-                }
-            )
-        });
-
-        user.watchedEpisodes++;
-
-        // Next episode
-        const currentEpisodeId =
-            `${currentEpisode.season}-${currentEpisode.episode}`;
-
-        const currentEpisodeData =
-            media[id].episodes?.[currentEpisodeId];
-
-        const nextEpisodeId =
-            currentEpisodeData?.nextEpisodeId;
-
-        const nextEpisode =
-            nextEpisodeId
-                ? media[id].episodes?.[nextEpisodeId]
-                : null;
-
-        if (nextEpisode) {
-
-            user.nextEpisode = {
-                season: nextEpisode.season,
-                episode: nextEpisode.episode,
-                title: nextEpisode.title,
-                releaseDate: nextEpisode.releaseDate
-            };
-
-        } else {
-
-            user.nextEpisode = null;
-
-        }
-
-        saveUserData();
-        saveRecentActivity();
-
-        renderWatching();
-        renderRecent();
-
+        if (!currentEpisode) return;
+        markEpisodeWatched(
+            id,
+            currentEpisode.season + "-" + currentEpisode.episode
+        );
         return;
     }
 }
@@ -253,7 +200,16 @@ function renderDetails(id) {
 function renderEpisodes(item) {
     episodesList.innerHTML = ""
 
-    Object.values(item.episodes || {}).forEach(episode => {
+    const user = userData[item.id];
+    const watchedIds = user?.watchedepiisodeIds || [];
+
+    Object.entries(item.episodes || {}).forEach(([episodeId, episode]) => {
+        const watched = watchedIds.includes(episodeId) ||
+            recentActivity.some(activity => 
+                Number(activity.mediaId) === item.id &&
+                activity.episodeId === episodeId
+            );
+
         const episodeCard = document.createElement("div");
         episodeCard.className = "episode-card";
 
@@ -261,11 +217,141 @@ function renderEpisodes(item) {
             <h3>Season ${episode.season}, Episode ${episode.episode} </h3>
             <p>${episode.title}</p>
             <p>${episode.releaseDate}</p>
+            ${
+                watched
+                    ? `<button class="episode-watch-btn watched" disabled
+                                aria-label = "Already Watched">
+                            <i class="fa-solid fa-square-check" aria-hidden="true"></i>
+                       </button>` 
+                    : `<button class="episode-watch-btn unwatched"
+                               data-id = "${item.id}"
+                               data-episode = "${episodeId}"
+                               aria-label = "Mark as Watched">
+                            <i class="fa-regular fa-square-check" aria-hidden="true"></i> 
+                       </button>`
+            }
         `;
 
         episodesList.appendChild(episodeCard);
     });
 }
+
+
+function isEpisodeWatched(id, episodeId) {
+    const user = userData[id];
+
+    return (user?.watchedEpisodeIds || []).includes(episodeId) ||
+        recentActivity.some(activity =>
+            Number(activity.mediaId) === Number(id) &&
+            activity.episodeId === episodeId
+        );
+}
+
+function advanceNextEpisode(item, user, episodeId) {
+    const currentEpisodeId = user.nextEpisode
+        ? `${user.nextEpisode.season}-${user.nextEpisode.episode}`
+        : null;
+
+    // Only advance if the episode marked is the current next episode.
+    if (episodeId !== currentEpisodeId) return false;
+
+    let nextId = item.episodes[episodeId]?.nextEpisodeId;
+    const visited = new Set([episodeId]);
+
+    // Skip episodes that are already watched.
+    while (
+        nextId &&
+        !visited.has(nextId) &&
+        isEpisodeWatched(item.id, nextId)
+    ) {
+        visited.add(nextId);
+        nextId = item.episodes[nextId]?.nextEpisodeId || null;
+    }
+
+    const nextEpisode = nextId ? item.episodes[nextId] : null;
+
+    user.nextEpisode = nextEpisode
+        ? {
+            season: nextEpisode.season,
+            episode: nextEpisode.episode,
+            title: nextEpisode.title,
+            releaseDate: nextEpisode.releaseDate
+        }
+        : null;
+
+    return true;
+}
+
+function markEpisodeWatched(id, episodeId) {
+    const item = media[id];
+    const user = userData[id];
+
+    if (
+        !item ||
+        item.type !== "tv" ||
+        !user ||
+        !item.episodes?.[episodeId]
+    ) {
+        return false;
+    }
+
+    if (!Array.isArray(user.watchedEpisodeIds)) {
+        user.watchedEpisodeIds = [];
+    }
+
+    // Prevent duplicate entries and duplicate progress increments.
+    if (isEpisodeWatched(id, episodeId)) {
+        if (!user.watchedEpisodeIds.includes(episodeId)) {
+            user.watchedEpisodeIds.push(episodeId);
+        }
+
+        advanceNextEpisode(item, user, episodeId);
+
+        saveUserData();
+        renderEpisodes(item);
+        renderWatching();
+        renderHistoryShows();
+        renderRecent();
+
+        return false;
+    }
+
+    user.watchedEpisodeIds.push(episodeId);
+
+    recentActivity.unshift({
+        mediaId: id,
+        episodeId: episodeId,
+        watchedDate: new Date().toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        })
+    });
+
+    user.watchedEpisodes = (user.watchedEpisodes || 0) + 1;
+    user.inHistory = true;
+    user.inWatchlist = false;
+
+    advanceNextEpisode(item, user, episodeId);
+
+    saveUserData();
+    saveRecentActivity();
+
+    renderEpisodes(item);
+    renderWatching();
+    renderHistoryShows();
+    renderRecent();
+
+    return true;
+};
+
+episodesList.addEventListener("click", function (e) {
+    const button = e.target.closest(".episode-watch-btn");
+    if (!button) return;
+
+    markEpisodeWatched(Number(button.dataset.id), button.dataset.episode);
+});
+
 
 //renderCast function
 function renderCast(item) {
