@@ -115,6 +115,9 @@ function markAsWatched(card) {
 const detailsPoster =
     document.getElementById("details-poster");
 
+const detailsHeader =
+    document.querySelector(".details-header");
+
 const detailsTitle =
     document.getElementById("details-title");
 
@@ -154,6 +157,18 @@ function renderDetails(id) {
     const item = media[id];
 
     if (!item) return;
+
+    const backdrop = item.backdrop  || item.poster;
+
+    detailsHeader.style.backgroundImage = `
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.92) 0%,
+            rgba(0, 0, 0, 0.76) 45%,
+            rgba(0, 0, 0, 0.25) 100%,
+        ),
+        url("${backdrop}")
+    `;
 
     if (item.type === 'tv') {
         episodesSection.style.display = "block"
